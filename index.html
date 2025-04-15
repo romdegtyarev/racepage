@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статистика пилотов</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <h1>Графики</h1>
+  <div class="chart-container">
+    <div>
+      <h3>Распределение очков</h3>
+      <canvas id="pointsChart" width="400" height="400"></canvas>
+    </div>
+    <div>
+      <h3>Количество пройденных кругов</h3>
+      <canvas id="lapsChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <div>
+      <h3>Квалификационный счёт</h3>
+      <canvas id="qualChart" width="400" height="400"></canvas>
+    </div>
+    <div>
+      <h3>Спринт-квалификационный счёт</h3>
+      <canvas id="sprintQualChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <h1>Статистика пилотов</h1>
+  <table id="drivers-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Пилот</th>
+        <th onclick="sortTable(1)">Старт</th>
+        <th onclick="sortTable(2)">Финиш</th>
+        <th onclick="sortTable(3)">Разница</th>
+        <th onclick="sortTable(4)">Гонки</th>
+        <th onclick="sortTable(5)">Спринты</th>
+        <th onclick="sortTable(6)">Круги</th>
+        <th onclick="sortTable(7)">Победы</th>
+        <th onclick="sortTable(8)">Подиумы</th>
+        <th onclick="sortTable(9)">Очки</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</body>
+</html>
+
