@@ -1,153 +1,152 @@
-/* Основные переменные для цветов */
+/* Main variables for colors */
 :root {
-  --primary-color: #e10600; /* Красный */
-  --secondary-color: #1c1c1c; /* Асфальтовый черный */
+  --primary-color: #e10600; /* Red */
+  --secondary-color: #1c1c1c; /* Asphalt black */
 
-  --text-color: #f0f0f0; /* Цвет текста */
-  --header-bg-color: #444; /* Цвет фона для заголовков */
-  --header-text-color: #fff; /* Цвет текста в заголовках */
+  --text-color: #f0f0f0; /* Text color */
+  --header-bg-color: #444; /* Background color for headers */
+  --header-text-color: #fff; /* Text color in headers */
 
-  --table-bg-color: #2c2c2c; /* Цвет фона таблицы */
-  --row-bg-color-hover: #3a3a3a; /* Цвет фона строки при наведении */
+  --table-bg-color: #2c2c2c; /* Table background color */
+  --row-bg-color-hover: #3a3a3a; /* Row background color on hover */
 }
 
-/* Сброс стилей */
 * {
-  margin: 0; /* Убираем отступы */
-  padding: 0; /* Убираем поля */
-  box-sizing: border-box; /* Устанавливаем модель коробки */
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove paddings */
+  box-sizing: border-box; /* Set box model */
 }
 
 
-/* Основные стили для тела документа */
+/* Main styles for document body */
 body {
-  background-color: var(--secondary-color); /* Цвет фона */
-  color: var(--text-color); /* Цвет текста */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Шрифт */
-  padding: 40px 20px; /* Отступы для тела */
-  display: flex; /* Используем flexbox для выравнивания */
-  flex-direction: column; /* Вертикальное направление */
-  align-items: center; /* Центрируем элементы по горизонтали */
+  background-color: var(--secondary-color); /* Background color */
+  color: var(--text-color); /* Text color */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font */
+  padding: 40px 20px; /* Padding for body */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Vertical direction */
+  align-items: center; /* Center items horizontally */
 }
 
-/* Заголовки */
+/* Headings */
 h1 {
-  text-align: center; /* Выравнивание по центру */
-  margin-bottom: 30px; /* Отступ снизу */
-  color: var(--primary-color); /* Цвет текста заголовка */
-  font-size: 2.5em; /* Размер шрифта */
+  text-align: center; /* Center alignment */
+  margin-bottom: 30px; /* Bottom margin */
+  color: var(--primary-color); /* Heading text color */
+  font-size: 2.5em; /* Font size */
 }
 
 
-/* Стили для таблицы */
+/* Styles for table */
 table {
-  width: 80%; /* Ширина таблицы */
-  border-collapse: collapse; /* Убираем промежутки между ячейками */
-  background-color: var(--table-bg-color); /* Цвет фона таблицы */
-  border-radius: 8px; /* Скругление углов */
-  overflow: hidden; /* Обрезаем содержимое */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Тень таблицы */
-  margin: 20px 0; /* Отступы вокруг таблицы */
+  width: 80%; /* Table width */
+  border-collapse: collapse; /* Remove gaps between cells */
+  background-color: var(--table-bg-color); /* Table background color */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Table shadow */
+  margin: 20px 0; /* Table margin */
 }
 
 td {
-  font-size: 0.95em
+  font-size: 0.95em;
 }
 
 th, td {
-  padding: 12px 10px; /* Внутренние отступы для ячеек */
-  text-align: center; /* Выравнивание текста по центру */
-  position: relative; /* Относительное позиционирование для стрелочек сортировки */
+  padding: 12px 10px; /* Inner padding for cells */
+  text-align: center; /* Center text alignment */
+  position: relative; /* Relative positioning for sorting arrows */
 }
 
 table, th, td {
-  border: none; /* Убираем границы */
+  border: none; /* Remove borders */
 }
 
-/* Эффекты при наведении */
+/* Hover effect */
 tr:hover {
-  background-color: var(--row-bg-color-hover); /* Цвет фона строки при наведении */
-  transition: background-color 0.3s ease; /* Плавный переход цвета */
+  background-color: var(--row-bg-color-hover); /* Row background color on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition */
 }
 
-/* Стрелочки сортировки по умолчанию скрыты */
+/* Sorting arrows are hidden by default */
 th::after {
-  content: ''; /* Создаем пустой контент для стрелочки */
-  position: absolute; /* Абсолютное позиционирование */
-  right: 10px; /* Отступ справа */
-  top: 50%; /* Центрируем по вертикали */
-  transform: translateY(-50%); /* Центрируем по вертикали */
-  width: 0; /* Ширина стрелочки */
-  height: 0; /* Высота стрелочки */
-  border-left: 5px solid transparent; /* Левый край стрелочки */
-  border-right: 5px solid transparent; /* Правый край стрелочки */
+  content: ''; /* Create empty content for arrow */
+  position: absolute; /* Absolute positioning */
+  right: 10px; /* Right offset */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 0; /* Arrow width */
+  height: 0; /* Arrow height */
+  border-left: 5px solid transparent; /* Left side of arrow */
+  border-right: 5px solid transparent; /* Right side of arrow */
 }
 
-/* Стрелочка для сортировки по возрастанию */
+/* Arrow for ascending sort */
 th.sorted-asc::after {
-  border-bottom: 8px solid var(--primary-color); /* Стрелочка вниз */
+  border-bottom: 8px solid var(--primary-color); /* Downward arrow */
 }
 
-/* Стрелочка для сортировки по убыванию */
+/* Arrow for descending sort */
 th.sorted-desc::after {
-  border-top: 8px solid var(--primary-color); /* Стрелочка вверх */
+  border-top: 8px solid var(--primary-color); /* Upward arrow */
 }
 
 
-/* Стили для графиков */
+/* Styles for charts */
 canvas {
-  max-width: 100%; /* Максимальная ширина графиков 100% от родительского элемента */
-  height: 300px; /* Фиксированная высота графиков */
-  margin: 10px; /* Отступы вокруг графиков */
+  max-width: 100%; /* Max width 100% of parent */
+  height: 300px; /* Fixed height */
+  margin: 10px; /* Margin around charts */
 }
 
-/* Стили для контейнера графиков */
+
+/* Styles for chart container */
 .chart-container {
-  display: flex; /* Используем flexbox для расположения графиков */
-  justify-content: space-around; /* Распределяем графики по горизонтали с равными промежутками */
-  width: 80%; /* Ширина контейнера 80% от родительского элемента */
-  flex-wrap: wrap; /* Позволяем графикам переноситься на новую строку при необходимости */
-  gap: 20px; /* Промежутки между графиками */
+  display: flex; /* Use flexbox to arrange charts */
+  justify-content: space-around; /* Distribute charts evenly */
+  width: 80%; /* Container width */
+  flex-wrap: wrap; /* Allow wrapping to new line */
+  gap: 20px; /* Gaps between charts */
 }
 
 
-/* Стили для таблицы с данными пилотов */
+/* Styles for drivers table */
 #drivers-table {
-  width: 80%; /* Ширина таблицы 80% от родительского элемента */
-  margin: 20px; /* Отступы вокруг таблицы */
-  border-collapse: collapse; /* Убираем промежутки между ячейками */
+  width: 80%; /* Table width */
+  margin: 20px; /* Table margins */
+  border-collapse: collapse; /* Remove cell gaps */
 }
 
 #drivers-table th {
-  background-color: var(--header-bg-color); /* Цвет фона заголовков таблицы */
-  color: var(--header-text-color); /* Цвет текста в заголовках */
-  cursor: pointer; /* Указатель курсора при наведении на заголовки */
-  position: relative; /* Относительное позиционирование для стрелочек сортировки */
+  background-color: var(--header-bg-color); /* Header background color */
+  color: var(--header-text-color); /* Header text color */
+  cursor: pointer; /* Pointer on hover */
+  position: relative; /* Relative positioning for arrows */
 }
 
 #drivers-table th, #drivers-table td {
-  padding: 10px; /* Внутренние отступы для заголовков и ячеек */
-  border: 1px solid transparent; /* Убираем границы по умолчанию */
+  padding: 10px; /* Inner padding for headers and cells */
+  border: 1px solid transparent; /* Remove default borders */
 }
 
 
-/* Стили для адаптивности */
+/* Responsive styles */
 @media (max-width: 768px) {
   body {
-    padding: 20px; /* Уменьшаем отступы на мобильных устройствах */
+    padding: 20px; /* Smaller padding on mobile */
   }
 
   table {
-    width: 100%; /* Ширина таблицы 100% на мобильных устройствах */
+    width: 100%; /* Full width on mobile */
   }
 
   .chart-container {
-    flex-direction: column; /* Вертикальное расположение графиков на мобильных устройствах */
-    align-items: center; /* Центрируем графики */
+    flex-direction: column; /* Vertical layout on mobile */
+    align-items: center; /* Center charts */
   }
 
   canvas {
-    height: 200px; /* Уменьшаем высоту графиков на мобильных устройствах */
+    height: 200px; /* Smaller chart height on mobile */
   }
 }
-
