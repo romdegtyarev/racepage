@@ -1,0 +1,62 @@
+[
+    {
+        "pair": "Норрис vs Пиастри",
+        "qualScore_1": "2",
+        "qualScore_2": "2"
+    },
+    {
+        "pair": "Ферстаппен vs Лоусон",
+        "qualScore_1": "2",
+        "qualScore_2": "0"
+    },
+    {
+        "pair": "Ферстаппен vs Цунода",
+        "qualScore_1": "2",
+        "qualScore_2": "0"
+    },
+    {
+        "pair": "Расселл vs Антонелли",
+        "qualScore_1": "4",
+        "qualScore_2": "0"
+    },
+    {
+        "pair": "Элбон vs Сайнс",
+        "qualScore_1": "3",
+        "qualScore_2": "1"
+    },
+    {
+        "pair": "Алонсо vs Стролл",
+        "qualScore_1": "4",
+        "qualScore_2": "0"
+    },
+    {
+        "pair": "Хюлкенберг vs Бортолето",
+        "qualScore_1": "3",
+        "qualScore_2": "1"
+    },
+    {
+        "pair": "Леклер vs Хэмилтон",
+        "qualScore_1": "3",
+        "qualScore_2": "1"
+    },
+    {
+        "pair": "Гасли vs Дуэн",
+        "qualScore_1": "4",
+        "qualScore_2": "0"
+    },
+    {
+        "pair": "Цунода vs Хаджар",
+        "qualScore_1": "1",
+        "qualScore_2": "1"
+    },
+    {
+        "pair": "Лоусон vs Хаджар",
+        "qualScore_1": "0",
+        "qualScore_2": "2"
+    },
+    {
+        "pair": "Окон vs Берман",
+        "qualScore_1": "3",
+        "qualScore_2": "1"
+    }
+]

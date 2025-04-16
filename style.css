@@ -1,0 +1,152 @@
+/* Main variables for colors */
+:root {
+  --primary-color: #e10600; /* Red */
+  --secondary-color: #1c1c1c; /* Asphalt black */
+
+  --text-color: #f0f0f0; /* Text color */
+  --header-bg-color: #444; /* Background color for headers */
+  --header-text-color: #fff; /* Text color in headers */
+
+  --table-bg-color: #2c2c2c; /* Table background color */
+  --row-bg-color-hover: #3a3a3a; /* Row background color on hover */
+}
+
+* {
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove paddings */
+  box-sizing: border-box; /* Set box model */
+}
+
+
+/* Main styles for document body */
+body {
+  background-color: var(--secondary-color); /* Background color */
+  color: var(--text-color); /* Text color */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font */
+  padding: 40px 20px; /* Padding for body */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Vertical direction */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Headings */
+h1 {
+  text-align: center; /* Center alignment */
+  margin-bottom: 30px; /* Bottom margin */
+  color: var(--primary-color); /* Heading text color */
+  font-size: 2.5em; /* Font size */
+}
+
+
+/* Styles for table */
+table {
+  width: 80%; /* Table width */
+  border-collapse: collapse; /* Remove gaps between cells */
+  background-color: var(--table-bg-color); /* Table background color */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Table shadow */
+  margin: 20px 0; /* Table margin */
+}
+
+td {
+  font-size: 0.95em;
+}
+
+th, td {
+  padding: 12px 10px; /* Inner padding for cells */
+  text-align: center; /* Center text alignment */
+  position: relative; /* Relative positioning for sorting arrows */
+}
+
+table, th, td {
+  border: none; /* Remove borders */
+}
+
+/* Hover effect */
+tr:hover {
+  background-color: var(--row-bg-color-hover); /* Row background color on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Sorting arrows are hidden by default */
+th::after {
+  content: ''; /* Create empty content for arrow */
+  position: absolute; /* Absolute positioning */
+  right: 10px; /* Right offset */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 0; /* Arrow width */
+  height: 0; /* Arrow height */
+  border-left: 5px solid transparent; /* Left side of arrow */
+  border-right: 5px solid transparent; /* Right side of arrow */
+}
+
+/* Arrow for ascending sort */
+th.sorted-asc::after {
+  border-bottom: 8px solid var(--primary-color); /* Downward arrow */
+}
+
+/* Arrow for descending sort */
+th.sorted-desc::after {
+  border-top: 8px solid var(--primary-color); /* Upward arrow */
+}
+
+
+/* Styles for charts */
+canvas {
+  max-width: 100%; /* Max width 100% of parent */
+  height: 300px; /* Fixed height */
+  margin: 10px; /* Margin around charts */
+}
+
+
+/* Styles for chart container */
+.chart-container {
+  display: flex; /* Use flexbox to arrange charts */
+  justify-content: space-around; /* Distribute charts evenly */
+  width: 80%; /* Container width */
+  flex-wrap: wrap; /* Allow wrapping to new line */
+  gap: 20px; /* Gaps between charts */
+}
+
+
+/* Styles for drivers table */
+#drivers-table {
+  width: 80%; /* Table width */
+  margin: 20px; /* Table margins */
+  border-collapse: collapse; /* Remove cell gaps */
+}
+
+#drivers-table th {
+  background-color: var(--header-bg-color); /* Header background color */
+  color: var(--header-text-color); /* Header text color */
+  cursor: pointer; /* Pointer on hover */
+  position: relative; /* Relative positioning for arrows */
+}
+
+#drivers-table th, #drivers-table td {
+  padding: 10px; /* Inner padding for headers and cells */
+  border: 1px solid transparent; /* Remove default borders */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
+    padding: 20px; /* Smaller padding on mobile */
+  }
+
+  table {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .chart-container {
+    flex-direction: column; /* Vertical layout on mobile */
+    align-items: center; /* Center charts */
+  }
+
+  canvas {
+    height: 200px; /* Smaller chart height on mobile */
+  }
+}
