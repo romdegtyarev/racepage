@@ -37,24 +37,31 @@ function createChart(ctx, type, data, options) {
  * @param {number[]} points - Driver points.
  */
 function createPieChart(canvasId, names, points) {
+  const drivers = names.map((name, index) => ({
+    name: name,
+    points: points[index]
+  }));
+
+  drivers.sort((a, b) => b.points - a.points);
+
+  const filteredDrivers = drivers.filter(driver => driver.name !== "Идеальный гонщик");
+
+  const sortedNames = filteredDrivers.map(driver => driver.name);
+  const sortedPoints = filteredDrivers.map(driver => driver.points);
   const ctx = document.getElementById(canvasId).getContext('2d');
   createChart(ctx, 'pie', {
-    labels: names,
+    labels: sortedNames,
     datasets: [{
       label: 'Points',
-      data: points,
-      backgroundColor: names.map((_, i) => `hsl(${(i * 360) / names.length}, 70%, 55%)`),
+      data: sortedPoints,
+      backgroundColor: sortedNames.map((_, i) => `hsl(${(i * 360) / sortedNames.length}, 70%, 55%)`),
       borderColor: '#1c1c1c',
       borderWidth: 2
     }]
   }, {
     plugins: {
       legend: {
-        position: 'right',
-        labels: {
-          color: '#f0f0f0',
-          padding: 20
-        }
+        display: false
       },
       tooltip: {
         callbacks: {
@@ -223,13 +230,22 @@ async function init() {
   createPieChart('pointsChart', names, points);
 
   // Create bar chart of laps
+  const driversWithLaps = names.map((name, index) => ({
+    name: name,
+    laps: drivers[index].laps
+  }));
+
+  driversWithLaps.sort((a, b) => b.laps - a.laps);
+
+  const sortedNames = driversWithLaps.map(driver => driver.name);
+  const sortedLaps = driversWithLaps.map(driver => driver.laps);
   const ctxLaps = document.getElementById('lapsChart').getContext('2d');
   createChart(ctxLaps, 'bar', {
-    labels: names,
+    labels: sortedNames,
     datasets: [{
       label: 'Laps',
-      data: drivers.map(d => d.laps),
-      backgroundColor: names.map((_, i) => `hsl(${(i * 360) / names.length}, 60%, 50%)`),
+      data: sortedLaps,
+      backgroundColor: sortedNames.map((_, i) => `hsl(${(i * 360) / sortedNames.length}, 60%, 50%)`),
       borderRadius: 5
     }]
   }, {
