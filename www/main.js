@@ -180,7 +180,15 @@ function populateDriversTable(drivers) {
       <td>${driver.sprints}</td>
       <td>${driver.laps}</td>
       <td>${driver.wins}</td>
+      <td>${driver.sprintswins}</td>
       <td>${driver.podiums}</td>
+      <td>${driver.pole}</td>
+      <td>${driver.sprintspole}</td>
+      <td>${driver.fastlaps}</td>
+      <td>${driver.sprintfastlaps}</td>
+      <td>${driver.outs}</td>
+      <td>${driver.dsq}</td>
+      <td>${driver.sprintsouts}</td>
       <td>${driver.points}</td>
     `;
     tbody.appendChild(row);
@@ -216,6 +224,25 @@ function drawDriverBattlesChart(canvasId, battlesData) {
 }
 
 /**
+ * Renders top 3 fastest pit stops.
+ * @param {{ driver: string, time: number }[]} pitstops
+ */
+function renderTopPitstops(pitstops) {
+  const list = document.getElementById("pitstop-list");
+  list.innerHTML = "";
+
+  const top = pitstops
+    .sort((a, b) => a.time - b.time)
+    .slice(0, 5);
+
+  top.forEach((pit, index) => {
+    const item = document.createElement("li");
+    item.textContent = `${index + 1}. ${pit.driver} ${pit.team} — ${pit.time} сек`;
+    list.appendChild(item);
+  });
+}
+
+/**
  * Main initialization function.
  */
 async function init() {
@@ -224,7 +251,7 @@ async function init() {
 
   const { names, points } = populateDriversTable(drivers);
 
-  sortTable(9); // Default sort by name
+  sortTable(17); // Default sort by name
 
   // Create pie chart of points
   createPieChart('pointsChart', names, points);
@@ -268,6 +295,9 @@ async function init() {
 
   const sprintBattlesData = await fetchData('driversbattlessprint.json');
   if (sprintBattlesData) drawDriverBattlesChart('sprintQualChart', sprintBattlesData);
+
+  const pitstops = await fetchData('pitstops.json');
+  if (pitstops) renderTopPitstops(pitstops);
 }
 
 document.addEventListener('DOMContentLoaded', init);
