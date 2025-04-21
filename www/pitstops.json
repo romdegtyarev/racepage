@@ -1,0 +1,62 @@
+[
+    {
+        "number": "1",
+        "team": "Ferrari",
+        "driver": "Шарль Леклер",
+        "time": "2.00"
+    },
+    {
+        "number": "2",
+        "team": "Ferrari",
+        "driver": "Шарль Леклер",
+        "time": "2.05"
+    },
+    {
+        "number": "3",
+        "team": "Ferrari",
+        "driver": "Льюис Хэмилтон",
+        "time": "2.07"
+    },
+    {
+        "number": "4",
+        "team": "Racing Bulls",
+        "driver": "Юки Цунода",
+        "time": "2.08"
+    },
+    {
+        "number": "5",
+        "team": "Red Bull",
+        "driver": "Макс Ферстаппен",
+        "time": "2.15"
+    },
+    {
+        "number": "6",
+        "team": "Ferrari",
+        "driver": "Льюис Хэмилтон",
+        "time": "2.16"
+    },
+    {
+        "number": "7",
+        "team": "Ferrari",
+        "driver": "Льюис Хэмилтон",
+        "time": "2.18"
+    },
+    {
+        "number": "8",
+        "team": "McLaren",
+        "driver": "Оскар Пиастри",
+        "time": "2.19"
+    },
+    {
+        "number": "9",
+        "team": "Sauber",
+        "driver": "Габриэль Бортолето",
+        "time": "2.24"
+    },
+    {
+        "number": "10",
+        "team": "Mercedes",
+        "driver": "Джордж Расселл",
+        "time": "2.26"
+    }
+]
