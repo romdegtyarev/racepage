@@ -131,20 +131,24 @@ function createBarChart(ctx, labels, dataset1, dataset2, driverNames1, driverNam
 }
 
 /**
- * Sorts the driver table based on column index.
- * @param {number} n - The index of the column to sort by.
+ * Sorts the given HTML table by a specific column index.
+ * Can be called from code or directly via header click.
+ *
+ * @param {string} tableId - The ID of the table to sort.
+ * @param {number} columnIndex - The column index to sort by.
  */
-function sortTable(n) {
-  const table = document.getElementById("drivers-table");
+function sortTableById(tableId, columnIndex) {
+  const table = document.getElementById(tableId);
   const rows = Array.from(table.rows).slice(1);
-  const isAscending = table.rows[0].cells[n].getAttribute('data-sort') === 'asc';
+  const header = table.rows[0].cells[columnIndex];
+  const isAscending = header.getAttribute('data-sort') === 'asc';
 
   table.querySelectorAll('th').forEach(header => header.classList.remove('sorted-asc', 'sorted-desc'));
-  table.rows[0].cells[n].classList.add(isAscending ? 'sorted-asc' : 'sorted-desc');
+  header.classList.add(isAscending ? 'sorted-asc' : 'sorted-desc');
 
   rows.sort((a, b) => {
-    const valA = a.cells[n].innerText.trim();
-    const valB = b.cells[n].innerText.trim();
+    const valA = a.cells[columnIndex].innerText.trim();
+    const valB = b.cells[columnIndex].innerText.trim();
     const numA = parseFloat(valA);
     const numB = parseFloat(valB);
 
@@ -156,7 +160,7 @@ function sortTable(n) {
   });
 
   rows.forEach(row => table.appendChild(row));
-  table.rows[0].cells[n].setAttribute('data-sort', isAscending ? 'desc' : 'asc');
+  header.setAttribute('data-sort', isAscending ? 'desc' : 'asc');
 }
 
 /**
@@ -164,40 +168,69 @@ function sortTable(n) {
  * @param {object[]} drivers - Array of driver stats.
  * @returns {{names: string[], points: number[]}} - Extracted names and points.
  */
-function populateDriversTable(drivers) {
-  const tbody = document.querySelector("#drivers-table tbody");
+function populateTables(drivers) {
+  const tables = {
+    general: document.querySelector("#table-general tbody"),
+    achievements: document.querySelector("#table-achievements tbody"),
+    sprint: document.querySelector("#table-sprint tbody"),
+    points: document.querySelector("#table-points tbody")
+  };
+
   const names = [];
   const points = [];
 
   drivers.forEach(driver => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${driver.name}</td>
-      <td>${driver.startPos}</td>
-      <td>${driver.finishPos}</td>
-      <td>${driver.diff}</td>
-      <td>${driver.races}</td>
-      <td>${driver.sprints}</td>
-      <td>${driver.laps}</td>
-      <td>${driver.wins}</td>
-      <td>${driver.sprintswins}</td>
-      <td>${driver.podiums}</td>
-      <td>${driver.pole}</td>
-      <td>${driver.sprintspole}</td>
-      <td>${driver.fastlaps}</td>
-      <td>${driver.sprintfastlaps}</td>
-      <td>${driver.outs}</td>
-      <td>${driver.dsq}</td>
-      <td>${driver.sprintsouts}</td>
-      <td>${driver.points}</td>
+    // General
+    tables.general.innerHTML += `
+      <tr>
+        <td>${driver.name}</td>
+        <td>${driver.startPos}</td>
+        <td>${driver.finishPos}</td>
+        <td>${driver.diff}</td>
+        <td>${driver.races}</td>
+        <td>${driver.sprints}</td>
+        <td>${driver.laps}</td>
+      </tr>
     `;
-    tbody.appendChild(row);
+
+    // Achievements
+    tables.achievements.innerHTML += `
+      <tr>
+        <td>${driver.name}</td>
+        <td>${driver.pole}</td>
+        <td>${driver.podiums}</td>
+        <td>${driver.wins}</td>
+        <td>${driver.fastlaps}</td>
+        <td>${driver.outs}</td>
+        <td>${driver.dsq}</td>
+      </tr>
+    `;
+
+    // Sprint
+    tables.sprint.innerHTML += `
+      <tr>
+        <td>${driver.name}</td>
+        <td>${driver.sprintspole}</td>
+        <td>${driver.sprintswins}</td>
+        <td>${driver.sprintfastlaps}</td>
+      </tr>
+    `;
+
+    // Points
+    tables.points.innerHTML += `
+      <tr>
+        <td>${driver.name}</td>
+        <td>${driver.points}</td>
+      </tr>
+    `;
+
     names.push(driver.name);
     points.push(driver.points);
   });
 
   return { names, points };
 }
+
 
 /**
  * Draws a driver battles chart from provided data.
@@ -246,12 +279,15 @@ function renderTopPitstops(pitstops) {
  * Main initialization function.
  */
 async function init() {
-  const drivers = await fetchData("drivers.json");
+  const drivers = await fetchData("/data/drivers.json");
   if (!drivers) return;
 
-  const { names, points } = populateDriversTable(drivers);
+  const { names, points } = populateTables(drivers);
 
-  sortTable(17); // Default sort by name
+  sortTableById("table-points", 1);
+  sortTableById("table-general", 4);
+  sortTableById("table-achievements", 2);
+  sortTableById("table-sprint", 2);
 
   // Create pie chart of points
   createPieChart('pointsChart', names, points);
@@ -290,13 +326,13 @@ async function init() {
     }
   });
 
-  const battlesData = await fetchData('driversbattles.json');
+  const battlesData = await fetchData('/data/driversbattles.json');
   if (battlesData) drawDriverBattlesChart('qualChart', battlesData);
 
-  const sprintBattlesData = await fetchData('driversbattlessprint.json');
+  const sprintBattlesData = await fetchData('/data/driversbattlessprint.json');
   if (sprintBattlesData) drawDriverBattlesChart('sprintQualChart', sprintBattlesData);
 
-  const pitstops = await fetchData('pitstops.json');
+  const pitstops = await fetchData('/data/pitstops.json');
   if (pitstops) renderTopPitstops(pitstops);
 }
 

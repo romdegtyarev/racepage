@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Статистика пилотов</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="libs/chart.js/chart.umd.js"></script>
   <script src="main.js" defer></script>
 </head>
 
@@ -36,32 +36,64 @@
   <h1>⏱️ Топ быстрых пит-стопов</h1>
   <ul id="pitstop-list"></ul>
 
-  <h1>Статистика пилотов</h1>
-  <table id="drivers-table">
+  <h2>Очки</h2>
+  <table id="table-points">
     <thead>
       <tr>
-        <th onclick="sortTable(0)">Пилот</th>
-        <th onclick="sortTable(1)">Старт</th>
-        <th onclick="sortTable(2)">Финиш</th>
-        <th onclick="sortTable(3)">Разница</th>
-        <th onclick="sortTable(4)">Гонки</th>
-        <th onclick="sortTable(5)">Спринты</th>
-        <th onclick="sortTable(6)">Круги</th>
-        <th onclick="sortTable(7)">Победы</th>
-        <th onclick="sortTable(8)">Спринт-победы</th>
-        <th onclick="sortTable(9)">Подиумы</th>
-        <th onclick="sortTable(10)">Поулы</th>
-        <th onclick="sortTable(11)">Спринт-поулы</th>
-        <th onclick="sortTable(12)">БК</th>
-        <th onclick="sortTable(13)">Спринт БК</th>
-        <th onclick="sortTable(14)">Сходы</th>
-        <th onclick="sortTable(15)">DSQ</th>
-        <th onclick="sortTable(16)">Спринт-сходы</th>
-        <th onclick="sortTable(17)">Очки</th>
+        <th onclick="sortTableById('table-points', 0)">Пилот</th>
+        <th onclick="sortTableById('table-points', 1)">Очки</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
+
+  <h2>Общая статистика</h2>
+  <table id="table-general">
+    <thead>
+      <tr>
+        <th onclick="sortTableById('table-general', 0)">Пилот</th>
+        <th onclick="sortTableById('table-general', 1)">Старт</th>
+        <th onclick="sortTableById('table-general', 2)">Финиш</th>
+        <th onclick="sortTableById('table-general', 3)">Разница</th>
+        <th onclick="sortTableById('table-general', 4)">Гонки</th>
+        <th onclick="sortTableById('table-general', 5)">Спринты</th>
+        <th onclick="sortTableById('table-general', 6)">Круги</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Гоночные достижения</h2>
+  <table id="table-achievements">
+    <thead>
+      <tr>
+        <th onclick="sortTableById('table-achievements', 0)">Пилот</th>
+        <th onclick="sortTableById('table-achievements', 1)">Поулы</th>
+        <th onclick="sortTableById('table-achievements', 2)">Подиумы</th>
+        <th onclick="sortTableById('table-achievements', 3)">Победы</th>
+        <th onclick="sortTableById('table-achievements', 4)">БК</th>
+        <th onclick="sortTableById('table-achievements', 5)">Сходы</th>
+        <th onclick="sortTableById('table-achievements', 6)">DSQ</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Спринт-достижения</h2>
+  <table id="table-sprint">
+    <thead>
+      <tr>
+        <th onclick="sortTableById('table-sprint', 0)">Пилот</th>
+        <th onclick="sortTableById('table-sprint', 1)">Спринт-поулы</th>
+        <th onclick="sortTableById('table-sprint', 2)">Спринт-победы</th>
+        <th onclick="sortTableById('table-sprint', 3)">Спринт БК</th>
+        <th onclick="sortTableById('table-sprint', 4)">Сходы</th>
+        <th onclick="sortTableById('table-sprint', 5)">DSQ</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
   <footer>
     <p>📬 Связь: <a href="mailto:racepagefeedback@gmail.com">racepagefeedback@gmail.com</a></p>
     <p>📢 Подписывайся на канал: <a href="https://t.me/racepage" target="_blank">Потный гараж</a></p>
