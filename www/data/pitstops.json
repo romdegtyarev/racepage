@@ -25,15 +25,15 @@
     },
     {
         "number": "5",
-        "team": "Ferrari",
-        "driver": "Льюис Хэмилтон",
-        "time": "2.07"
+        "team": "Red Bull",
+        "driver": "Юки Цунода",
+        "time": "2.06"
     },
     {
         "number": "6",
         "team": "Ferrari",
         "driver": "Льюис Хэмилтон",
-        "time": "2.08"
+        "time": "2.07"
     },
     {
         "number": "7",
@@ -43,20 +43,20 @@
     },
     {
         "number": "8",
+        "team": "Ferrari",
+        "driver": "Льюис Хэмилтон",
+        "time": "2.08"
+    },
+    {
+        "number": "9",
         "team": "Racing Bulls",
         "driver": "Юки Цунода",
         "time": "2.08"
     },
     {
-        "number": "9",
+        "number": "10",
         "team": "Red Bull",
         "driver": "Юки Цунода",
         "time": "2.09"
-    },
-    {
-        "number": "10",
-        "team": "McLaren",
-        "driver": "Оскар Пиастри",
-        "time": "2.10"
     }
 ]
