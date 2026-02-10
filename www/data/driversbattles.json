@@ -1,67 +1,58 @@
 [
-    {
-        "pair": "Норрис vs Пиастри",
-        "qualScore_1": "5",
-        "qualScore_2": "7"
-    },
-    {
-        "pair": "Ферстаппен vs Цунода",
-        "qualScore_1": "10",
-        "qualScore_2": "0"
-    },
-    {
-        "pair": "Расселл vs Антонелли",
-        "qualScore_1": "11",
-        "qualScore_2": "1"
-    },
-    {
-        "pair": "Элбон vs Сайнс",
-        "qualScore_1": "7",
-        "qualScore_2": "5"
-    },
-    {
-        "pair": "Алонсо vs Стролл",
-        "qualScore_1": "12",
-        "qualScore_2": "0"
-    },
-    {
-        "pair": "Хюлкенберг vs Бортолето",
-        "qualScore_1": "6",
-        "qualScore_2": "6"
-    },
-    {
-        "pair": "Леклер vs Хэмилтон",
-        "qualScore_1": "8",
-        "qualScore_2": "4"
-    },
-    {
-        "pair": "Цунода vs Хаджар",
-        "qualScore_1": "5",
-        "qualScore_2": "1"
-    },
-    {
-        "pair": "Лоусон vs Хаджар",
-        "qualScore_1": "2",
-        "qualScore_2": "8"
-    },
-    {
-        "pair": "Окон vs Берман",
-        "qualScore_1": "6",
-        "qualScore_2": "6"
-    },
-    {
-        "pair": "Гасли vs Дуэн",
-        "qualScore_1": "5",
-        "qualScore_2": "1"
-    },
-    {
-        "pair": "Ферстаппен vs Лоусон",
-        "qualScore_1": "2",
-        "qualScore_2": "0"
-    },
-    {
-        "pair": "Цунода vs Хаджар",
-        "qualScore_1": "1",
-        "qualScore_2": "1"
-    }
+	{
+	    "pair": "Леклер vs Хэмилтон",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Ферстаппен vs Хаджар",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Норрис vs Пиастри",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Расселл vs Антонелли",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Алонсо vs Стролл",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Окон vs Берман",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Элбон vs Сайнс",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Боттас vs Перес",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Гасли vs Колапинто",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Лоусон vs Линдблад",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	},
+	{
+	    "pair": "Хюлкенберг vs Бортолето",
+	    "qualScore_1": "0",
+	    "qualScore_2": "0"
+	}
 ]
+
